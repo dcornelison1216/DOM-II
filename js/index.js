@@ -38,7 +38,7 @@ images.forEach(image => {
 // prevent images from covering the nav menu
 header.style.zIndex = 1;
 
-// 4. dblclick ()
+// 4. dblclick (add new funbus image to header when 'Fun Bus' is double-clicked)
 const funBus = document.createElement('img')
 funBus.src = 'img/funbusluggage.jpg'
 funBus.style.width = '50px'
@@ -50,7 +50,7 @@ funBusText.addEventListener('dblclick', () => {
   navContainer.prepend(funBus)
 })
 
-// 5. wheel (scale images using mouse wheel)
+// 5. wheel (scale all images using mouse wheel - also works for scroll on trackpad)
 function zoom(e) {
   e.preventDefault()
   scale += event.deltaY * -0.0006
@@ -61,14 +61,7 @@ let scale = 1.2;
 images.forEach(image => {
   image.addEventListener('wheel', zoom)
 })
-// funBusImg.addEventListener('wheel', zoom)
-// funBusImg.addEventListener('wheel', (e) => {
-//   e.preventDefault()
-//   scale += event.deltaY * -0.0006
-//   scale = Math.min(Math.max(.25, scale), 3)
-//   console.log(scale)
-//   funBusImg.style.transform = `scale(${scale})`
-// })
+
 
 // drag / drop
 
