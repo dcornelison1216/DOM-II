@@ -105,7 +105,8 @@ dropTarget.addEventListener('dragenter', (event) => {
   event.target.style.border = '3px dotted lightblue'
   event.target.style.color = 'lightblue'
 })
-  // prevent default handling during drag over so header can be dropped into drop dropTarget
+  // prevent default handling during drag over event so header can be dropped into drop dropTarget
+  // (By default, data/elements cannot be dropped in other elements.)
 dropTarget.addEventListener('dragover', (event) => {
   event.preventDefault();
 })
